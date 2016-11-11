@@ -78,7 +78,7 @@ $Pro6pp->distance(6225, 6210, 'straight');
  * Calculate distance between two coordinates
  */
 
-$Pro6pp->coordinate_distance(50.858030, 5.717376, 50.840078, 5.659258);
+$Pro6pp->coordinateDistance(50.858030, 5.717376, 50.840078, 5.659258);
 ```
 
 ## Security
