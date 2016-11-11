@@ -1,11 +1,11 @@
 # PHP Wrapper for Pro6PP Api
 
-[![Latest version on Packagist](https://img.shields.io/packagist/v/pendonl/laravel-fontawesome.svg?style=flat-square)](https://packagist.org/packages/pendonl/laravel-fontawesome)
+[![Latest version on Packagist](https://img.shields.io/packagist/v/pendonl/pro6pp-php-wrapper.svg?style=flat-square)](https://packagist.org/packages/pendonl/laravel-fontawesome)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE)
-[![Travis branch](https://img.shields.io/travis/PendoNL/laravel-fontawesome/master.svg)](https://travis-ci.org/PendoNL/laravel-fontawesome)
-[![Scrutinizer](https://img.shields.io/scrutinizer/g/PendoNL/laravel-fontawesome.svg)](https://scrutinizer-ci.com/g/PendoNL/laravel-fontawesome/)
-[![SensioLabs Insight](https://img.shields.io/sensiolabs/i/e660c560-9d50-43e3-9be1-e556ba78f189.svg)](https://insight.sensiolabs.com/projects/e660c560-9d50-43e3-9be1-e556ba78f189)
-[![Github All Releases](https://img.shields.io/github/downloads/pendo/laravel-fontawesome/total.svg)](https://github.com/pendonl/laravel-fontawesome)
+[![Travis branch](https://img.shields.io/travis/PendoNL/pro6pp-php-wrapper/master.svg)](https://travis-ci.org/PendoNL/laravel-fontawesome)
+[![Scrutinizer](https://img.shields.io/scrutinizer/g/PendoNL/pro6pp-php-wrapper.svg)](https://scrutinizer-ci.com/g/PendoNL/laravel-fontawesome/)
+[![SensioLabs Insight](https://img.shields.io/sensiolabs/i/0bcf56eb-37d1-4525-a4ef-2375d03563aa.svg)](https://insight.sensiolabs.com/projects/e660c560-9d50-43e3-9be1-e556ba78f189)
+[![Github All Releases](https://img.shields.io/github/downloads/pendo/pro6pp-php-wrapper/total.svg)](https://github.com/pendonl/laravel-fontawesome)
 
 The `PendoNL/pro6pp-php-wrapper` package provides an easy to use way to communicate with Pro6PP's API to fetch location based data such as addresses, coordinates, etc. Below you can find a list all methods.
 

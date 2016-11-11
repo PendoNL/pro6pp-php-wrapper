@@ -106,7 +106,7 @@ class Pro6ppTest extends \PHPUnit\Framework\TestCase
     public function test_it_calculates_distance_by_coordinates() {
         $Pro6pp = new Pro6pp('api_key');
 
-        $this->assertEquals(4.5435663553281715, $Pro6pp->coordinate_distance(50.858030, 5.717376, 50.840078, 5.659258));
+        $this->assertEquals(4.5435663553281715, $Pro6pp->coordinatesDistance(50.858030, 5.717376, 50.840078, 5.659258));
     }
 
     /**

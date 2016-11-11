@@ -141,7 +141,7 @@ class Pro6pp
      *
      * @return float
      */
-    public function coordinate_distance($lat1, $lng1, $lat2, $lng2, $miles = false)
+    public function coordinatesDistance($lat1, $lng1, $lat2, $lng2, $miles = false)
     {
         $pi80 = M_PI / 180;
         $lat1 *= $pi80;
