@@ -4,7 +4,6 @@ namespace PendoNL\Pro6pp;
 
 class Pro6pp
 {
-
     private $api_format = '';
 
     private $api_pretty = false;
@@ -20,9 +19,10 @@ class Pro6pp
      *
      * @param $api_key
      * @param $format
-     * @param boolean $pretty
+     * @param bool $pretty
      */
-    public function __construct($api_key, $format = 'json', $pretty = false) {
+    public function __construct($api_key, $format = 'json', $pretty = false)
+    {
         $this->api_key = $api_key;
         $this->api_format = $format;
         $this->api_pretty = $pretty;
@@ -31,7 +31,8 @@ class Pro6pp
     /**
      * @return string
      */
-    public function getApikey() {
+    public function getApikey()
+    {
         return $this->api_key;
     }
 
@@ -44,7 +45,8 @@ class Pro6pp
      *
      * @return mixed
      */
-    public function autocomplete($postalcode, $number = '', $extension = '') {
+    public function autocomplete($postalcode, $number = '', $extension = '')
+    {
         $postalcode = $this->determinePostalType($postalcode);
 
         $this->data = array_merge($postalcode, ['streetnumber' => $number, 'extension' => $extension]);
@@ -60,7 +62,8 @@ class Pro6pp
      *
      * @return mixed
      */
-    public function reverse($lat, $lng) {
+    public function reverse($lat, $lng)
+    {
         $this->data = ['lat' => $lat, 'lng' => $lng];
 
         return $this->call('reverse', $this->prepareData($this->data));
@@ -75,8 +78,9 @@ class Pro6pp
      *
      * @return mixed
      */
-    public function locator($target_nl_fourpps, $optional = []) {
-        $this->data['target_nl_fourpps'] = implode(",", $target_nl_fourpps);
+    public function locator($target_nl_fourpps, $optional = [])
+    {
+        $this->data['target_nl_fourpps'] = implode(',', $target_nl_fourpps);
 
         $this->data = array_merge($this->data, $optional);
 
@@ -93,21 +97,23 @@ class Pro6pp
      *
      * @return mixed
      */
-    public function range($nl_fourpp, $range = 5000, $per_page = 10, $page = 1) {
+    public function range($nl_fourpp, $range = 5000, $per_page = 10, $page = 1)
+    {
         $this->data = ['nl_fourpp' => $nl_fourpp, 'range' => $range, 'per_page' => $per_page, 'page' => $page];
 
         return $this->call('range', $this->prepareData($this->data));
     }
 
     /**
-     * Autocompletes a city name
+     * Autocompletes a city name.
      *
      * @param $nl_city
      * @param int $per_page
      *
      * @return mixed
      */
-    public function suggest($nl_city, $per_page = 10) {
+    public function suggest($nl_city, $per_page = 10)
+    {
         $this->data = ['nl_city' => $nl_city, 'per_page' => $per_page];
 
         return $this->call('suggest', $this->prepareData($this->data));
@@ -123,7 +129,8 @@ class Pro6pp
      *
      * @return mixed
      */
-    public function distance($from_nl_fourpp, $to_nl_fourpp, $algorithm = 'road') {
+    public function distance($from_nl_fourpp, $to_nl_fourpp, $algorithm = 'road')
+    {
         $this->data = ['from_nl_fourpp' => $from_nl_fourpp, 'to_nl_fourpp' => $to_nl_fourpp, 'algorithm' => $algorithm];
 
         return $this->call('distance', $this->prepareData($this->data));
@@ -136,7 +143,6 @@ class Pro6pp
      * @param $lng1
      * @param $lat2
      * @param $lng2
-     *
      * @param bool $miles
      *
      * @return float
@@ -157,7 +163,7 @@ class Pro6pp
         $c = 2 * atan2(sqrt($a), sqrt(1 - $a));
         $km = $r * $c;
 
-        return ($miles ? ($km * 0.621371192) : $km);
+        return $miles ? ($km * 0.621371192) : $km;
     }
 
     /**
@@ -165,18 +171,19 @@ class Pro6pp
      *
      * @param $postalcode
      *
-     * @return array
-     *
      * @throws \Exception
+     *
+     * @return array
      */
-    public function determinePostalType($postalcode) {
-        $postalcode = str_replace(" ", "", $postalcode);
+    public function determinePostalType($postalcode)
+    {
+        $postalcode = str_replace(' ', '', $postalcode);
 
-        if(strlen($postalcode) == 6) {
+        if (strlen($postalcode) == 6) {
             return ['nl_sixpp' => $postalcode];
         }
 
-        if(strlen($postalcode) == 4) {
+        if (strlen($postalcode) == 4) {
             return ['nl_fourpp' => $postalcode];
         }
 
@@ -190,7 +197,8 @@ class Pro6pp
      *
      * @return mixed
      */
-    protected function prepareData($data) {
+    protected function prepareData($data)
+    {
         $data['auth_key'] = $this->api_key;
         $data['format'] = $this->api_format;
         $data['pretty'] = $this->api_pretty;
@@ -207,8 +215,9 @@ class Pro6pp
      *
      * @return mixed
      */
-    protected function call($path, $data) {
-        $url = $this->api_host . $path .'?'. http_build_query($data);
+    protected function call($path, $data)
+    {
+        $url = $this->api_host.$path.'?'.http_build_query($data);
 
         $ch = curl_init($url);
 
@@ -221,5 +230,4 @@ class Pro6pp
 
         return $return;
     }
-
 }
