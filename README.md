@@ -6,7 +6,7 @@
 [![Scrutinizer](https://img.shields.io/scrutinizer/g/PendoNL/pro6pp-php-wrapper.svg)](https://scrutinizer-ci.com/g/PendoNL/laravel-fontawesome/)
 [![SensioLabs Insight](https://img.shields.io/sensiolabs/i/0bcf56eb-37d1-4525-a4ef-2375d03563aa.svg)](https://insight.sensiolabs.com/projects/e660c560-9d50-43e3-9be1-e556ba78f189)
 [![Style Ci](https://styleci.io/repos/73438968/shield)](https://styleci.io/repos/73438968/)
-[![Github All Releases](https://img.shields.io/github/downloads/pendo/pro6pp-php-wrapper/total.svg)](https://github.com/pendonl/laravel-fontawesome)
+[![Total Downloads](https://img.shields.io/packagist/dt/pendonl/pro6pp-php-wrapper.svg?style=flat-square)](https://packagist.org/packages/pendonl/pro6pp-php-wrapper)
 
 The `PendoNL/pro6pp-php-wrapper` package provides an easy to use way to communicate with Pro6PP's API to fetch location based data such as addresses, coordinates, etc. Below you can find a list all methods.
 
